@@ -1,0 +1,17 @@
+[package]
+name = "sigmaos-browser"
+version = "0.1.0"
+edition = "2021"
+authors = ["SigmaOS Project"]
+description = "Browser and web integration"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-browser"
+readme = "README.md"
+keywords = ["browser", "web", "integration"]
+categories = ["web-programming"]
+
+[dependencies]
+sigmaos-kernel = { version = "0.1", path = "../SigmaOS-kernel" }
+
+[profile.release]
+opt-level = 3
