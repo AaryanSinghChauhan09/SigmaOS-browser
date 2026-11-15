@@ -11,7 +11,10 @@ keywords = ["browser", "web", "integration"]
 categories = ["web-programming"]
 
 [dependencies]
-sigmaos-kernel = { version = "0.1", path = "../SigmaOS-kernel" }
 
 [profile.release]
 opt-level = 3
+
+[lib]
+name = "sigmaos_browser"
+path = "src/lib.rs"
