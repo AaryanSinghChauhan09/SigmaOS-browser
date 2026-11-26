@@ -148,7 +148,10 @@ mod tests {
         let item1 = make_browser_item("item1", "First");
         let item2 = make_browser_item("item1", "Duplicate");
         mgr.add_item(item1).unwrap();
-        assert_eq!(mgr.add_item(item2), Err(BrowserError::Duplicate("item1".to_string())));
+        assert_eq!(
+            mgr.add_item(item2),
+            Err(BrowserError::Duplicate("item1".to_string()))
+        );
     }
 
     #[test]
@@ -175,6 +178,9 @@ mod tests {
         mgr.add_item(item).unwrap();
         assert!(mgr.set_enabled("item1", false).is_ok());
         assert!(!mgr.get_item("item1").unwrap().enabled);
-        assert_eq!(mgr.set_enabled("none", true), Err(BrowserError::NotFound("none".to_string())));
+        assert_eq!(
+            mgr.set_enabled("none", true),
+            Err(BrowserError::NotFound("none".to_string()))
+        );
     }
 }
