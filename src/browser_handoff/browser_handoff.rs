@@ -1,8 +1,7 @@
 // src/browser_handoff/browser_handoff.rs
-// Browser URL handoff and default-browser management for SigmaOS,
-// inspired by Omarchy 4.0.5 (`omancy-default-browser`,
-// `omancy-cmd-browser-handoff`, `omancy-chromium-copy-url-host`,
-// `omancy-chromium-ytdlp-host`).
+// Browser URL handoff and default-browser management for SigmaOS
+// (`sigmaos-default-browser`, `sigmaos-cmd-browser-handoff`,
+// `sigmaos-chromium-copy-url-host`, `sigmaos-chromium-ytdlp-host`).
 //
 // This subsystem owns the *mechanism* of browser selection and URL handling
 // only. The actual process launch (policy) is left to the caller, preserving
@@ -37,7 +36,7 @@ use alloc::string::{String, ToString};
 use alloc::vec::Vec;
 use core::fmt;
 
-/// Known default browsers. Omarchy's `omancy-default-browser` manages a
+/// Known default browsers. `sigmaos-default-browser` manages a
 /// single default; this enum keeps the common cases in-memory without a
 /// heap allocation for the hot path.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -383,8 +382,8 @@ mod tests {
             Some("sigmaos.example".to_string())
         );
         assert_eq!(
-            BrowserHandoff::copy_url_host("http://www.omarchy.org/"),
-            Some("www.omarchy.org".to_string())
+            BrowserHandoff::copy_url_host("http://www.sigmaos.org/"),
+            Some("www.sigmaos.org".to_string())
         );
         assert_eq!(
             BrowserHandoff::copy_url_host("not-a-url"),
